@@ -12,9 +12,15 @@ def lambda_handler(event, context):
         retrieveAndGenerateConfiguration={
             'type': 'KNOWLEDGE_BASE',
             'knowledgeBaseConfiguration': {
-                'knowledgeBaseId': 'JQQCW61MR3', 
-                'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-instant-v1'
+                'knowledgeBaseId': 'xxxxx', 
+                'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-instant-v1',
+                'generationConfiguration': {
+                    'guardrailConfiguration': {
+                        'guardrailId': 'bu1c4tskdls2',
+                        'guardrailVersion': 'DRAFT'
+                        }
                     }
+                 }
                 })
       
         responseKB=client_knowledgebase['output']['text']
